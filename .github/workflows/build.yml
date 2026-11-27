@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Unpack archive
-        run: unzip -o PulseProxy.zip -x ".github/*"
+        run: for f in *.zip; do unzip -o "$f" -x ".github/*"; done
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
